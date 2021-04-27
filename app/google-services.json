@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "952371622012",
+    "project_id": "ichat-app-willyan",
+    "storage_bucket": "ichat-app-willyan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952371622012:android:5f3099a4a9bdcc11add9f9",
+        "android_client_info": {
+          "package_name": "me.willyan.ichat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "952371622012-a3kfre78a7pgimg9rjkohf2uu0md2j9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0BQ7E6Iy1lgdc35Kz7kZZ57Mgbi3eh78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952371622012-a3kfre78a7pgimg9rjkohf2uu0md2j9b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
