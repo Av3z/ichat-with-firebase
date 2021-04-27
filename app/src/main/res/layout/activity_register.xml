@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50sp"
+        android:layout_marginTop="100sp"
+        android:background="@drawable/edittext_rounded"
+        android:layout_marginRight="50sp"
+        android:layout_marginBottom="10sp"
+        android:padding="8dp"
+        android:ems="10"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50sp"
+        android:layout_marginTop="10sp"
+        android:background="@drawable/edittext_rounded"
+        android:layout_marginRight="50sp"
+        android:layout_marginBottom="10sp"
+        android:padding="8dp"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_rounded"
+        android:layout_marginLeft="50sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="50sp"
+        android:padding="8dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50sp"
+        android:background="@drawable/bg_button_rounded"
+        android:text="Cadastrar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:textColor="@color/purple_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50sp"
+        android:layout_marginRight="50sp"
+        android:textSize="18dp"
+        android:text="Não tem uma conta? Clique Aqui!" />
+
+</LinearLayout>
