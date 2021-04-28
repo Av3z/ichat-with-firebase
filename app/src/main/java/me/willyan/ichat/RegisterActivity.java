@@ -165,6 +165,11 @@ public class RegisterActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText(RegisterActivity.this, "Conta registrada com sucesso!", Toast.LENGTH_SHORT).show();
                     Log.i("Teste", task.getResult().getUser().getUid());
+                    Intent i = new Intent(RegisterActivity.this, MessageActivity.class);
+
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                    startActivity(i);
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
