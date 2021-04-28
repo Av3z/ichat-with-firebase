@@ -41,6 +41,10 @@ public class MessageActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            case R.id.search:
+                Intent it = new Intent(MessageActivity.this, SearchActivity.class);
+                startActivity(it);
+                break;
             case R.id.contatcs:
                 Intent i = new Intent(MessageActivity.this, ContactsActivity.class);
                 startActivity(i);
