@@ -2,9 +2,11 @@ package me.willyan.ichat.model;
 
 public class User {
 
-    private final String photoUrl;
-    private final String uuid;
-    private final String name;
+    private String photoUrl;
+    private String uuid;
+    private String name;
+
+    public User(){}
 
     public User(String uuid, String photoUrl, String name) {
         this.uuid = uuid;

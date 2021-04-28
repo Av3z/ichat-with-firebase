@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IChat APP</string>
+    <string name="contacts">Contatos</string>
+    <string name="logout">Sair</string>
 </resources>
