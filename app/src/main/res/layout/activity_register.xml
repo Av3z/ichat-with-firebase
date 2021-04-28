@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,69 +8,117 @@
     android:background="@color/background"
     tools:context=".RegisterActivity">
 
+    <Button
+        android:id="@+id/buttonPhoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/bg_select_photo_rounded"
+        android:text="Photo"
+        app:layout_constraintBottom_toTopOf="@+id/img_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
     <EditText
-        android:id="@+id/editName"
+        android:id="@+id/img_photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
-        android:layout_marginTop="100sp"
-        android:background="@drawable/edittext_rounded"
         android:layout_marginRight="50sp"
-        android:layout_marginBottom="10sp"
-        android:padding="8dp"
+        android:background="@drawable/edittext_rounded"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
+        android:padding="8dp"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.372" />
 
     <EditText
-        android:id="@+id/editUser"
+        android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50sp"
-        android:layout_marginTop="10sp"
-        android:background="@drawable/edittext_rounded"
+        android:layout_marginTop="12dp"
         android:layout_marginRight="50sp"
-        android:layout_marginBottom="10sp"
-        android:padding="8dp"
+        android:background="@drawable/edittext_rounded"
         android:ems="10"
-        android:hint="Usuario"
-        android:inputType="textPersonName"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_photo"
+        app:layout_constraintVertical_bias="0.03" />
 
     <EditText
         android:id="@+id/editPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edittext_rounded"
         android:layout_marginLeft="50sp"
-        android:layout_marginTop="10sp"
+        android:layout_marginTop="28dp"
         android:layout_marginRight="50sp"
-        android:padding="8dp"
+        android:background="@drawable/edittext_rounded"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
+        android:padding="8dp"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="50sp"
+        android:layout_marginBottom="160dp"
         android:background="@drawable/bg_button_rounded"
-        android:text="Cadastrar" />
+        android:text="Cadastrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
+        app:layout_constraintVertical_bias="0.081" />
 
     <TextView
         android:id="@+id/textView"
+        android:layout_width="271dp"
+        android:layout_height="35dp"
+        android:text="Já tem uma conta? Clique Aqui!"
         android:textColor="@color/purple_700"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50sp"
-        android:layout_marginRight="50sp"
         android:textSize="18dp"
-        android:text="Não tem uma conta? Clique Aqui!" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
+        app:layout_constraintVertical_bias="0.315" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPhoto"
+        app:layout_constraintStart_toStartOf="@+id/buttonPhoto"
+        app:layout_constraintTop_toTopOf="@+id/buttonPhoto"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
