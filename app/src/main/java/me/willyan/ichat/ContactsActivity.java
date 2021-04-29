@@ -47,6 +47,10 @@ public class ContactsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(@NonNull Item item, @NonNull View view) {
                 Intent i = new Intent(ContactsActivity.this, ChatActivity.class);
+
+                UserItem userItem = (UserItem) item;
+
+                i.putExtra("user", userItem.user);
                 startActivity(i);
             }
         });

@@ -24,7 +24,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:background="@drawable/edittext_rounded"
-        android:text="TextView"
+        android:text="TextView Olá testando, isso é um teste, testando novamente, deixando o texto bem grande para fazer um longo teste, testando denovo e acho que assim ficou bom!"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

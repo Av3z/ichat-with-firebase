@@ -11,6 +11,8 @@ import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
 
+import me.willyan.ichat.model.User;
+
 public class ChatActivity extends AppCompatActivity {
 
     private GroupAdapter adapter;
@@ -19,6 +21,9 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        User user = getIntent().getExtras().getParcelable("user");
+        getSupportActionBar().setTitle(user.getName());
 
         RecyclerView recyclerView = findViewById(R.id.recyclerChat);
         adapter = new GroupAdapter();
