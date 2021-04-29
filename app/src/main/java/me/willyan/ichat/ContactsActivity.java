@@ -93,7 +93,7 @@ public class ContactsActivity extends AppCompatActivity {
         @Override
         public void bind(@NonNull ViewHolder viewHolder, int position) {
             TextView textViewName =  viewHolder.itemView.findViewById(R.id.textContact);
-            ImageView imageContacts = viewHolder.itemView.findViewById(R.id.imgPhotoContacts);
+            ImageView imageContacts = viewHolder.itemView.findViewById(R.id.imgPhotoLastMessage);
 
             textViewName.setText(user.getName());
             Picasso.get().load(user.getPhotoUrl()).into(imageContacts);

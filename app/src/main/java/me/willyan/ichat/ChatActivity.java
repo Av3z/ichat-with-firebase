@@ -32,6 +32,7 @@ import com.xwray.groupie.ViewHolder;
 
 import java.util.List;
 
+import me.willyan.ichat.model.Contact;
 import me.willyan.ichat.model.Message;
 import me.willyan.ichat.model.User;
 
@@ -137,6 +138,21 @@ public class ChatActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Log.d("Teste", documentReference.getId());
+
+                            Contact contact = new Contact();
+
+                            contact.setUuid(toId);
+                            contact.setName(user.getName());
+                            contact.setPhotoUrl(user.getPhotoUrl());
+                            contact.setTimestamp(message.getTimestamp());
+                            contact.setLastMessage(message.getText());
+
+                            FirebaseFirestore.getInstance().collection("/last-messages")
+                                    .document(fromId)
+                                    .collection("contacts")
+                                    .document(toId)
+                                    .set(contact);
+
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -153,6 +169,20 @@ public class ChatActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Log.d("Teste", documentReference.getId());
+
+                            Contact contact = new Contact();
+
+                            contact.setUuid(toId);
+                            contact.setName(user.getName());
+                            contact.setPhotoUrl(user.getPhotoUrl());
+                            contact.setTimestamp(message.getTimestamp());
+                            contact.setLastMessage(message.getText());
+
+                            FirebaseFirestore.getInstance().collection("/last-messages")
+                                    .document(toId)
+                                    .collection("contacts")
+                                    .document(fromId)
+                                    .set(contact);
                         }
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override

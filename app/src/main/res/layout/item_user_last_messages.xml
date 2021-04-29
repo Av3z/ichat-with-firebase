@@ -24,13 +24,25 @@
         android:layout_height="22dp"
         android:layout_marginStart="10dp"
         android:text="TextView"
+        android:background="@drawable/edittext_rounded"
         android:textColor="@color/black"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imgPhotoLastMessage"
         app:layout_constraintTop_toTopOf="@+id/imgPhotoLastMessage"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textContactName"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="5dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgPhotoLastMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
