@@ -18,11 +18,11 @@
         android:paddingLeft="10dp"
         android:background="@drawable/edittext_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/buttonChatMsg"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonChatMsg"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="@string/chatButton"

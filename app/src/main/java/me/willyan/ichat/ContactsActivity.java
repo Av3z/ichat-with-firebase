@@ -43,6 +43,8 @@ public class ContactsActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        fetchContacts();
+
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull Item item, @NonNull View view) {
@@ -51,11 +53,11 @@ public class ContactsActivity extends AppCompatActivity {
                 UserItem userItem = (UserItem) item;
 
                 i.putExtra("user", userItem.user);
+
                 startActivity(i);
             }
         });
 
-        fetchContacts();
     }
 
     private void fetchContacts() {
@@ -73,7 +75,6 @@ public class ContactsActivity extends AppCompatActivity {
                             User user = doc.toObject(User.class);
                             adapter.add(new UserItem(user));
                             Log.d("Teste", user.getName());
-
                         }
                     }
                 });

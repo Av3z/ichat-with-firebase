@@ -100,11 +100,16 @@ public class RegisterActivity extends AppCompatActivity {
                         User user = new User(uuid, photoUrl, name);
 
                         FirebaseFirestore.getInstance().collection("users")
-                                .add(user)
-                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                .document(uuid)
+                                .set(user)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-                                        Log.i("Teste", documentReference.getId());
+                                    public void onSuccess(Void aVoid) {
+                                        Intent i = new Intent(RegisterActivity.this, MessageActivity.class);
+
+                                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                                        startActivity(i);
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -163,13 +168,11 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(RegisterActivity.this, "Conta registrada com sucesso!", Toast.LENGTH_SHORT).show();
+
                     Log.i("Teste", task.getResult().getUser().getUid());
-                    Intent i = new Intent(RegisterActivity.this, MessageActivity.class);
 
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    saveStorage();
 
-                    startActivity(i);
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
