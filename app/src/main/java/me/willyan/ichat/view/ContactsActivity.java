@@ -1,4 +1,4 @@
-package me.willyan.ichat;
+package me.willyan.ichat.view;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,7 +26,10 @@ import com.xwray.groupie.ViewHolder;
 
 import java.util.List;
 
+import me.willyan.ichat.R;
+import me.willyan.ichat.database.Database;
 import me.willyan.ichat.model.User;
+import me.willyan.ichat.service.UserItem;
 
 public class ContactsActivity extends AppCompatActivity {
 
@@ -43,66 +46,23 @@ public class ContactsActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        fetchContacts();
+        Database database = new Database();
+
+        database.fetchContacts(adapter);
 
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull Item item, @NonNull View view) {
                 Intent i = new Intent(ContactsActivity.this, ChatActivity.class);
 
+
                 UserItem userItem = (UserItem) item;
 
-                i.putExtra("user", userItem.user);
+                i.putExtra("user", userItem.getUser());
 
                 startActivity(i);
             }
         });
 
-    }
-
-    private void fetchContacts() {
-        FirebaseFirestore.getInstance().collection("/users")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if(error != null){
-                            Log.e("Teste", error.getMessage(), error);
-                            return;
-                        }
-
-                        List<DocumentSnapshot> docs = value.getDocuments();
-                        for(DocumentSnapshot doc : docs){
-                            User user = doc.toObject(User.class);
-                            adapter.add(new UserItem(user));
-                            Log.d("Teste", user.getName());
-                        }
-                    }
-                });
-    }
-
-
-    private class UserItem extends Item<ViewHolder>{
-
-        private final User user;
-
-        private UserItem(User user) {
-            this.user = user;
-        }
-
-
-        @Override
-        public void bind(@NonNull ViewHolder viewHolder, int position) {
-            TextView textViewName =  viewHolder.itemView.findViewById(R.id.textContact);
-            ImageView imageContacts = viewHolder.itemView.findViewById(R.id.imgPhotoLastMessage);
-
-            textViewName.setText(user.getName());
-            Picasso.get().load(user.getPhotoUrl()).into(imageContacts);
-
-        }
-
-        @Override
-        public int getLayout() {
-            return R.layout.item_user;
-        }
     }
 }

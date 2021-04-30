@@ -1,4 +1,4 @@
-package me.willyan.ichat;
+package me.willyan.ichat.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import me.willyan.ichat.R;
 
 public class SearchActivity extends AppCompatActivity {
 
