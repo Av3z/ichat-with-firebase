@@ -10,39 +10,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IChatFireBase">
         <activity
-            android:name=".ChatActivity"
+            android:name=".view.ChatActivity"
             android:label="@string/chat">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MessageActivity" />
+                android:value=".view.MessageActivity" />
 
         </activity>
 
         <activity
-            android:name=".SearchActivity"
+            android:name=".view.SearchActivity"
             android:label="@string/search">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MessageActivity" />
+                android:value=".view.MessageActivity" />
         </activity>
 
         <activity
-            android:name=".ContactsActivity"
+            android:name=".view.ContactsActivity"
             android:label="@string/contacts">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MessageActivity" />
+                android:value=".view.MessageActivity" />
         </activity>
-        <activity android:name=".MessageActivity">
+        <activity android:name=".view.MessageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".view.RegisterActivity" />
+        <activity android:name=".view.LoginActivity" />
     </application>
 
 </manifest>

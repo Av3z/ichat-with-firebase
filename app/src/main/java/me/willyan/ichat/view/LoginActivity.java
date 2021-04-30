@@ -1,23 +1,23 @@
-package me.willyan.ichat;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package me.willyan.ichat.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import me.willyan.ichat.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginUser();
+                loginUser(editEmail.getText().toString(), editPassword.getText().toString());
             }
         });
 
@@ -53,9 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void loginUser() {
-        String login = editEmail.getText().toString();
-        String password = editPassword.getText().toString();
+    private void loginUser(String login, String password) {
 
         if(login == null || login.isEmpty() || password == null || login.isEmpty()){
             Toast.makeText(this, "Você precisa prencher todos os campos!", Toast.LENGTH_SHORT).show();
@@ -70,15 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
                         Toast.makeText(LoginActivity.this, "Logado com sucesso!", Toast.LENGTH_SHORT).show();
-                        Log.i("Teste", task.getResult().getUser().getUid());
-
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(LoginActivity.this, "Erro ao entrar!", Toast.LENGTH_SHORT).show();
-                        Log.i("Teste", e.getMessage(), e);
                     }
                 });
 

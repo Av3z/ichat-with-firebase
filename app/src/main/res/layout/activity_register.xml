@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background"
-    tools:context=".RegisterActivity">
+    tools:context=".view.RegisterActivity">
 
     <Button
         android:id="@+id/buttonPhoto"
